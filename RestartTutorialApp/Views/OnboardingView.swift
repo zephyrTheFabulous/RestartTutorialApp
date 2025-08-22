@@ -92,7 +92,6 @@ struct OnboardingView: View {
 
 //        Text("Onboarding")
 //          .font(.largeTitle)
-//
 //        Button {
 //          isOnboardingViewActive = false
 //        } label: {
