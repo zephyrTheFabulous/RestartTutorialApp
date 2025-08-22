@@ -6,17 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		29E8F8092E58C71700FAEA99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8062E58C71700FAEA99 /* ContentView.swift */; };
+		29E8F80A2E58C71700FAEA99 /* RestartTutorialAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8072E58C71700FAEA99 /* RestartTutorialAppApp.swift */; };
+		29E8F80B2E58C71700FAEA99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E8F8052E58C71700FAEA99 /* Assets.xcassets */; };
+		29E8F80E2E58CA3000FAEA99 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 29E8F80D2E58CA3000FAEA99 /* success.m4a */; };
+		29E8F80F2E58CA3000FAEA99 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29E8F80C2E58CA3000FAEA99 /* chimeup.mp3 */; };
+		29E8F8162E58CE9800FAEA99 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8152E58CE9800FAEA99 /* OnboardingView.swift */; };
+		29E8F8182E58CEA400FAEA99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8172E58CEA400FAEA99 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		29E8F7F72E58C70E00FAEA99 /* RestartTutorialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestartTutorialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E8F8052E58C71700FAEA99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29E8F8062E58C71700FAEA99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29E8F8072E58C71700FAEA99 /* RestartTutorialAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTutorialAppApp.swift; sourceTree = "<group>"; };
+		29E8F80C2E58CA3000FAEA99 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		29E8F80D2E58CA3000FAEA99 /* success.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = success.m4a; sourceTree = "<group>"; };
+		29E8F8142E58CE2200FAEA99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29E8F8152E58CE9800FAEA99 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		29E8F8172E58CEA400FAEA99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		29E8F7F92E58C70E00FAEA99 /* RestartTutorialApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RestartTutorialApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		29E8F7F42E58C70E00FAEA99 /* Frameworks */ = {
@@ -32,7 +42,7 @@
 		29E8F7EE2E58C70E00FAEA99 = {
 			isa = PBXGroup;
 			children = (
-				29E8F7F92E58C70E00FAEA99 /* RestartTutorialApp */,
+				29E8F8082E58C71700FAEA99 /* RestartTutorialApp */,
 				29E8F7F82E58C70E00FAEA99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +53,53 @@
 				29E8F7F72E58C70E00FAEA99 /* RestartTutorialApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		29E8F8082E58C71700FAEA99 /* RestartTutorialApp */ = {
+			isa = PBXGroup;
+			children = (
+				29E8F8142E58CE2200FAEA99 /* Info.plist */,
+				29E8F8072E58C71700FAEA99 /* RestartTutorialAppApp.swift */,
+				29E8F8112E58CB9F00FAEA99 /* Views */,
+				29E8F8132E58CBBC00FAEA99 /* Utility */,
+				29E8F8122E58CBA600FAEA99 /* Components */,
+				29E8F8052E58C71700FAEA99 /* Assets.xcassets */,
+				29E8F8102E58CA5F00FAEA99 /* Sounds */,
+			);
+			path = RestartTutorialApp;
+			sourceTree = "<group>";
+		};
+		29E8F8102E58CA5F00FAEA99 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29E8F80C2E58CA3000FAEA99 /* chimeup.mp3 */,
+				29E8F80D2E58CA3000FAEA99 /* success.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		29E8F8112E58CB9F00FAEA99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29E8F8062E58C71700FAEA99 /* ContentView.swift */,
+				29E8F8152E58CE9800FAEA99 /* OnboardingView.swift */,
+				29E8F8172E58CEA400FAEA99 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		29E8F8122E58CBA600FAEA99 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		29E8F8132E58CBBC00FAEA99 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +116,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				29E8F7F92E58C70E00FAEA99 /* RestartTutorialApp */,
 			);
 			name = RestartTutorialApp;
 			packageProductDependencies = (
@@ -109,6 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E8F80E2E58CA3000FAEA99 /* success.m4a in Resources */,
+				29E8F80F2E58CA3000FAEA99 /* chimeup.mp3 in Resources */,
+				29E8F80B2E58C71700FAEA99 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E8F8162E58CE9800FAEA99 /* OnboardingView.swift in Sources */,
+				29E8F8182E58CEA400FAEA99 /* HomeView.swift in Sources */,
+				29E8F8092E58C71700FAEA99 /* ContentView.swift in Sources */,
+				29E8F80A2E58C71700FAEA99 /* RestartTutorialAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +317,11 @@
 				DEVELOPMENT_TEAM = BL7L4PWZN6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RestartTutorialApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +345,11 @@
 				DEVELOPMENT_TEAM = BL7L4PWZN6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RestartTutorialApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
