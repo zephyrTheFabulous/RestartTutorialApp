@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct OnboardingView: View {
+  @AppStorage("onboarding") var isOnboardingViewActive = true
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+          Text("Onboarding")
+            .font(.largeTitle)
+
+          Button {
+            isOnboardingViewActive = false
+          } label: {
+            Text("Start")
+          }
+        } //: VS
     }
 }
 
