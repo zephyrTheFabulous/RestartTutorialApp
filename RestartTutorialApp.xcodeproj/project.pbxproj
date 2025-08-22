@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2970B8782E58FC320033A49A /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970B8772E58FC320033A49A /* CircleGroupView.swift */; };
 		29E8F8092E58C71700FAEA99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8062E58C71700FAEA99 /* ContentView.swift */; };
 		29E8F80A2E58C71700FAEA99 /* RestartTutorialAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E8F8072E58C71700FAEA99 /* RestartTutorialAppApp.swift */; };
 		29E8F80B2E58C71700FAEA99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E8F8052E58C71700FAEA99 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2970B8772E58FC320033A49A /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 		29E8F7F72E58C70E00FAEA99 /* RestartTutorialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestartTutorialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E8F8052E58C71700FAEA99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29E8F8062E58C71700FAEA99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		29E8F8122E58CBA600FAEA99 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2970B8772E58FC320033A49A /* CircleGroupView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2970B8782E58FC320033A49A /* CircleGroupView.swift in Sources */,
 				29E8F8162E58CE9800FAEA99 /* OnboardingView.swift in Sources */,
 				29E8F8182E58CEA400FAEA99 /* HomeView.swift in Sources */,
 				29E8F8092E58C71700FAEA99 /* ContentView.swift in Sources */,

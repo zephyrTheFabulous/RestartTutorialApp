@@ -33,12 +33,7 @@ struct OnboardingView: View {
         }
           //MARK: - CENTER
         ZStack {
-          ZStack {
-            Circle().stroke(.white.opacity(0.2), lineWidth: 40)
-              .frame(width: 260, alignment: .center)
-            Circle().stroke(.white.opacity(0.2), lineWidth: 80)
-              .frame(width: 260, alignment: .center)
-          }
+          CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
           Image(.character1)
             .resizable()
             .scaledToFit()
