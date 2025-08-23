@@ -9,6 +9,27 @@ import SwiftUI
 
 struct OnboardingView: View {
   @AppStorage("onboarding") var isOnboardingViewActive = true
+  @State private var buttonWidth = UIScreen.main.bounds.width - 80 // -40 from each side
+  @State private var buttonOffset: CGFloat = 0
+
+  var dragGesture: some Gesture {
+    DragGesture()
+      .onChanged { gesture in
+        if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 { // 80 because it counts from the center of button(40 button side + 40 from screen side)
+          buttonOffset = gesture.translation.width // only run when the dragging has been started in the right direction
+        }
+      }
+      .onEnded { _ in
+        withAnimation  { // button stick either to right side
+          if buttonOffset >= buttonWidth / 2 {
+            buttonOffset = buttonWidth - 80
+            isOnboardingViewActive = false
+          } else { // or to left side
+            buttonOffset = 0
+          }
+        }
+      }
+  }
 
   var body: some View {
     ZStack {
@@ -41,29 +62,29 @@ struct OnboardingView: View {
         Spacer()
           //MARK: - FOOTER
         ZStack {
-          // 1. Background (Static)
+            // 1. Background (Static)
           Capsule()
             .fill(.white.opacity(0.2))
           Capsule()
             .fill(.white.opacity(0.2))
             .padding(8)
 
-          // 2. Call-to-action (Static)
+            // 2. Call-to-action (Static)
           Text("Get Started")
             .font(.system(.title3, design: .rounded))
             .fontWeight(.bold)
             .foregroundStyle(.white)
             .offset(x: 20)
 
-          // 3. Capsule (Dynamic width)
+            // 3. Capsule (Dynamic width)
           HStack {
             Capsule()
-              .fill(.red)
-              .frame(width: 80)
+              .fill(.colorBlue)
+              .frame(width: 80 + buttonOffset) // slider button trail effect(can be changed to colorRed)
             Spacer()
           }
 
-          // 4. Circle button (Draggable)
+            // 4. Circle button (Draggable)
           HStack {
             ZStack {
               Circle()
@@ -76,22 +97,23 @@ struct OnboardingView: View {
             }
             .foregroundStyle(.white)
             .frame(width: 80, height: 80, alignment: .center)
-            .onTapGesture {
-              isOnboardingViewActive = false
-            }
+            .offset(x: buttonOffset)
+            .gesture(
+              dragGesture
+            )
             Spacer()
           }
         } //: FOOTER
-        .frame(height: 80, alignment: .center)
+        .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
 
-//        Text("Onboarding")
-//          .font(.largeTitle)
-//        Button {
-//          isOnboardingViewActive = false
-//        } label: {
-//          Text("Start")
-//        }
+          //        Text("Onboarding")
+          //          .font(.largeTitle)
+          //        Button {
+          //          isOnboardingViewActive = false
+          //        } label: {
+          //          Text("Start")
+          //        }
       } //: VS
     } //: ZS
   }
