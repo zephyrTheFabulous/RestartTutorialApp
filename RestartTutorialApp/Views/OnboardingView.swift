@@ -11,6 +11,7 @@ struct OnboardingView: View {
   @AppStorage("onboarding") var isOnboardingViewActive = true
   @State private var buttonWidth = UIScreen.main.bounds.width - 80 // -40 from each side
   @State private var buttonOffset: CGFloat = 0
+  @State private var isAnimating = false // animation control
 
   var dragGesture: some Gesture {
     DragGesture()
@@ -20,7 +21,7 @@ struct OnboardingView: View {
         }
       }
       .onEnded { _ in
-        withAnimation  { // button stick either to right side
+        withAnimation(.easeOut(duration: 0.5))  { // button stick either to right side
           if buttonOffset >= buttonWidth / 2 {
             buttonOffset = buttonWidth - 80
             isOnboardingViewActive = false
@@ -52,6 +53,10 @@ struct OnboardingView: View {
           .multilineTextAlignment(.center)
           .padding(.horizontal, 10)
         }
+        .opacity(isAnimating ? 1:0)
+        .offset(y: isAnimating ? 0:-40)
+        .animation(.easeOut(duration: 1), value: isAnimating)
+
           //MARK: - CENTER
         ZStack {
           CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
@@ -59,6 +64,8 @@ struct OnboardingView: View {
             .resizable()
             .scaledToFit()
         }
+        .opacity(isAnimating ? 1:0)
+        .animation(.easeOut(duration: 0.5), value: isAnimating)
         Spacer()
           //MARK: - FOOTER
         ZStack {
@@ -106,6 +113,9 @@ struct OnboardingView: View {
         } //: FOOTER
         .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
+        .opacity(isAnimating ? 1:0)
+        .offset(y: isAnimating ? 0:40)
+        .animation(.easeOut(duration: 1), value: isAnimating)
 
           //        Text("Onboarding")
           //          .font(.largeTitle)
@@ -116,6 +126,9 @@ struct OnboardingView: View {
           //        }
       } //: VS
     } //: ZS
+    .onAppear {
+      isAnimating = true
+    }
   }
 }
 
