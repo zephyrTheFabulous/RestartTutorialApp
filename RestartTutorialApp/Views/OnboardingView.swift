@@ -15,6 +15,7 @@ struct OnboardingView: View {
   @State private var imageOffset: CGSize = CGSize(width: 0, height: 0) // or just .zero
   @State private var indicatorOpacity = 1.0 // for small symbol under image
   @State private var textTitle = "Share."
+  let hapticFeedback = UINotificationFeedbackGenerator()
 
 
   var buttonDragGesture: some Gesture {
@@ -29,9 +30,11 @@ struct OnboardingView: View {
           if buttonOffset >= buttonWidth / 2 {
             buttonOffset = buttonWidth - 80
             isOnboardingViewActive = false
-            playSound(sound: "chimeup", type: "mp3")
+            playSound(sound: "chimeup", type: "mp3") // sound
+            hapticFeedback.notificationOccurred(.success) // vibration
           } else { // or to left side
             buttonOffset = 0
+            hapticFeedback.notificationOccurred(.warning) // vibration
           }
         }
       }
