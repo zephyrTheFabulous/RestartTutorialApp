@@ -13,7 +13,9 @@ struct OnboardingView: View {
   @State private var buttonOffset: CGFloat = 0
   @State private var isAnimating = false // animation control
   @State private var imageOffset: CGSize = CGSize(width: 0, height: 0) // or just .zero
-  @State private var indicatorOpacity = 1.0
+  @State private var indicatorOpacity = 1.0 // for small symbol under image
+  @State private var textTitle = "Share."
+
 
   var buttonDragGesture: some Gesture {
     DragGesture()
@@ -42,6 +44,7 @@ struct OnboardingView: View {
 
           withAnimation(.linear(duration: 0.25)) {
             indicatorOpacity = 0 // to hide arrows symbol on drag
+            textTitle = "Give."
           }
         }
       }
@@ -50,6 +53,7 @@ struct OnboardingView: View {
 
         withAnimation(.linear(duration: 0.25)) {
           indicatorOpacity = 1 // to show arrows symbol on comeback
+          textTitle = "Share."
         }
       }
   }
@@ -64,10 +68,13 @@ struct OnboardingView: View {
           //MARK: - HEADER
         Spacer()
         VStack(spacing: 0) {
-          Text("Share.")
+          Text(textTitle)
             .font(.system(size: 60))
             .fontWeight(.heavy)
             .foregroundStyle(.white)
+            .transition(.opacity)
+//            .id(textTitle) // no use of this anymore?
+
           Text("""
             It's not how much we give but how much love we put into giving.
             """)
