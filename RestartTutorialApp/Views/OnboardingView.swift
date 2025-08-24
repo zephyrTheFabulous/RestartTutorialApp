@@ -29,6 +29,7 @@ struct OnboardingView: View {
           if buttonOffset >= buttonWidth / 2 {
             buttonOffset = buttonWidth - 80
             isOnboardingViewActive = false
+            playSound(sound: "chimeup", type: "mp3")
           } else { // or to left side
             buttonOffset = 0
           }
@@ -178,6 +179,7 @@ struct OnboardingView: View {
     .onAppear {
       isAnimating = true
     }
+    .preferredColorScheme(.dark)
   }
 }
 
