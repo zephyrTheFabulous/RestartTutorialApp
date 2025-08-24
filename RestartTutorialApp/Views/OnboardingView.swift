@@ -12,8 +12,9 @@ struct OnboardingView: View {
   @State private var buttonWidth = UIScreen.main.bounds.width - 80 // -40 from each side
   @State private var buttonOffset: CGFloat = 0
   @State private var isAnimating = false // animation control
+  @State private var imageOffset: CGSize = CGSize(width: 0, height: 0) // or just .zero
 
-  var dragGesture: some Gesture {
+  var buttonDragGesture: some Gesture {
     DragGesture()
       .onChanged { gesture in
         if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 { // 80 because it counts from the center of button(40 button side + 40 from screen side)
@@ -32,6 +33,20 @@ struct OnboardingView: View {
       }
   }
 
+  var imageDragGesture: some Gesture {
+    DragGesture()
+      .onChanged { gesture in
+        if abs(imageOffset.width) <= 150 { // movement restraints
+          imageOffset = gesture.translation
+        }
+      }
+      .onEnded { _ in
+        imageOffset = .zero
+      }
+  }
+
+
+  //MARK: - BODY
   var body: some View {
     ZStack {
       Color.colorBlue.ignoresSafeArea()
@@ -63,9 +78,15 @@ struct OnboardingView: View {
           Image(.character1)
             .resizable()
             .scaledToFit()
+            .opacity(isAnimating ? 1:0)
+            .animation(.easeOut(duration: 0.5), value: isAnimating)
+            .offset(x: imageOffset.width * 1.2, y: 0)
+            .rotationEffect(.degrees(Double(imageOffset.width/20)))
+            .gesture(
+              imageDragGesture
+            )
+            .animation(.easeOut(duration: 1), value: imageOffset)
         }
-        .opacity(isAnimating ? 1:0)
-        .animation(.easeOut(duration: 0.5), value: isAnimating)
         Spacer()
           //MARK: - FOOTER
         ZStack {
@@ -106,7 +127,7 @@ struct OnboardingView: View {
             .frame(width: 80, height: 80, alignment: .center)
             .offset(x: buttonOffset)
             .gesture(
-              dragGesture
+              buttonDragGesture
             )
             Spacer()
           }
